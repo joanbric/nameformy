@@ -1,0 +1,60 @@
+:root {
+	--yellow: #e0a538ff;
+	--violet: #603454ff;
+	--rose: #8d556eff;
+	--charcoal: #2d4452ff;
+	--gray: #49687fff;
+
+    /* Custom pallet */
+
+    --clr-black: #232730;
+    --clr-gray: #2C364B;
+    --clr-header: #34373E;
+    --clr-bg-btns: #9029CB;
+    --clr-bg-inputs: #535D74;
+    --clr-fnt-link: #FEFFC3;
+    --clr-fnt-general: white;
+    --clr-fnt-scnd-opction: #9029CB;
+    --clr-fnt-discret-txt: #989BA2;
+
+
+    /* Fonts Families */
+    --fnt-title: 'Calistoga', cursive;
+    --fnt-general: 'Poiret One', cursive;
+
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--clr-black);
+    color: var(--clr-fnt-general);
+}
+
+a{
+    color: var(--clr-fnt-link);
+}
+
+ul, ol{
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--fnt-title);
+    font-weight: 400;
+}
+
+button{
+    border: none;
+    color: var(--fnt-general)
+}
+
+.btn-primary{
+    background-color: var(--clr-bg-btns);
+}
