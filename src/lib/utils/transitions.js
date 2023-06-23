@@ -9,8 +9,9 @@ export function toTheBottle(node, { duration }) {
     };
 }
 
-export function fromTheBottle(node, { duration }) {
+export function fromTheBottle(node, { duration, delay }) {
     return {
+        delay,
         duration,
         css: (t) => {
             return `
