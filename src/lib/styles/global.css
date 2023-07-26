@@ -5,56 +5,95 @@
 	--charcoal: #2d4452ff;
 	--gray: #49687fff;
 
-    /* Custom pallet */
+	/* Custom pallet */
 
-    --clr-black: #232730;
-    --clr-gray: #2C364B;
-    --clr-header: #34373E;
-    --clr-bg-btns: #9029CB;
-    --clr-bg-inputs: #535D74;
-    --clr-fnt-link: #FEFFC3;
-    --clr-fnt-general: white;
-    --clr-fnt-scnd-opction: #9029CB;
-    --clr-fnt-discret: #989BA2;
+	--clr-black: #232730;
+	--clr-grey: #2c364b;
+	--clr-grey-rgb: 44, 54, 75;
+	--clr-header: #34373e;
+    --clr-pink: #EC56F1;
+    --clr-gold: #E0A540;
+    --clr-dark-violet: #3D3160;
+	--clr-bg-btns: #9029cb;
+	--clr-bg-btns-hover: #ac2cf7;
+	--clr-bg-inputs: #535d74;
+	--clr-fnt-link: #feffc3;
+	--clr-fnt-general: white;
+	--clr-fnt-scnd-opction: #9029cb;
+	--clr-fnt-discret: #989ba2;
+
+    --shdw-pink: 0 6px 8px rgba(236, 86, 241, .3);
 
 
-    /* Fonts Families */
-    --fnt-title: 'Calistoga', cursive;
-    --fnt-general: 'Poiret One', cursive;
+    --brd-grey-light: 3px solid #9aa9cd;
 
+	/* Fonts Families */
+	--fnt-title: 'Calistoga', cursive;
+	--fnt-general: 'Poppins', sans-serif;
+}
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background-color: var(--clr-black);
+	color: var(--clr-fnt-general);
+	font-family: var(--fnt-general);
+
+	scroll-behavior: smooth;
+}
+
+a {
+	color: var(--clr-fnt-link);
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--fnt-title);
+	font-weight: 400;
+}
+
+button {
+	border: none;
+	color: var(--fnt-general);
+}
+
+.btn-primary {
+	background-color: var(--clr-bg-btns);
+	padding: 10px 15px;
+	border-radius: 5px;
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+.btn-primary:not(:disabled):hover {
+	background-color: var(--clr-bg-btns-hover);
 
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+button:disabled, .btn-primary:disabled{
+    opacity: 0.5;
 }
 
-body{
-    background-color: var(--clr-black);
-    color: var(--clr-fnt-general);
-}
+.home-section-container {
+	width: 100%;
+	height: 100%;
+    min-height: inherit;
 
-a{
-    color: var(--clr-fnt-link);
-}
+	max-width: 1400px;
+	margin: 0 auto;
 
-ul, ol{
-    list-style: none;
-}
-
-h1, h2, h3, h4, h5, h6{
-    font-family: var(--fnt-title);
-    font-weight: 400;
-}
-
-button{
-    border: none;
-    color: var(--fnt-general)
-}
-
-.btn-primary{
-    background-color: var(--clr-bg-btns);
+	padding-top: 80px;
 }

@@ -45,7 +45,7 @@
 </script>
 
 <div class="container">
-	{#key i}
+	<!-- {#key i} -->
 		{#if isWordVisible}
 			{#if i % 2 === 0}
 				<span class="subject" in:typewriter={{ speed: 1, delay: 0 }} out:toTheBottle={{ duration: 500, delay: 0 }}
@@ -54,12 +54,12 @@
 			{:else}
 				<span
 					class="name"
-					in:fromTheBottle={{ duration: 500, delay: durationGap }}
-					out:fade={{ delay: 0 }}>{words[i]}</span
+					in:fromTheBottle={{ duration: 200, delay: durationGap}}
+					out:fade={{ delay: -500 }}>{words[i]}</span
 				>
 			{/if}
 		{/if}
-	{/key}
+	<!-- {/key} -->
 	<div
 		class="logo-container"
 		style={`
@@ -73,41 +73,23 @@
 
 <style>
 	.container {
-		position: relative;
 		text-align: center;
-		padding-top: 200px;
-		margin-top: 100px;
-		overflow: hidden;
 	}
 	span {
-		position: absolute;
-		top: 0;
-		left: 50%;
-		transform: translateX(-50%);
+        display: block;
 		font-size: 3.8rem;
 		font-family: var(--fnt-title);
+        margin-bottom: 15px;
 	}
     span.subject {
         color: var(--clr-fnt-discret)
     }
 	span.name {
-		transform: translateX(-50%, 400px);
         font-size: 4.4rem;
 	}
 
 	.logo-container {
 		animation: ease-in-out infinite shake;
-	}
-
-	@keyframes animate {
-		0% {
-			opacity: 1;
-			transform: translate(-50%, 0);
-		}
-		100% {
-			opacity: 0;
-			transform: translate(-50%, 400px) scale(0.4);
-		}
 	}
 
 	@keyframes shake {

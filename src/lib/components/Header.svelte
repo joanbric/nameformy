@@ -1,14 +1,21 @@
 <script>
 	import SmallLogo from '$lib/components/svgs/NFM-logo_small.svelte';
-    import {createEventDispatcher} from 'svelte';
+	import { createEventDispatcher } from 'svelte';
 	export let select = 'home';
 
-    const dispatch = createEventDispatcher();
+	const dispatch = createEventDispatcher();
 
-    function handleGenerateClick() {
-        dispatch('generate');
-    }
+	function handleGenerateClick() {
+		dispatch('generate');
+		showModal();
+	}
+	import Modal from '$lib/components/Modal.svelte';
+	import SubjectForm from './SubjectForm.svelte';
 
+	let isModalVisible = false;
+	function showModal() {
+		isModalVisible = true;
+	}
 </script>
 
 <header>
@@ -17,13 +24,18 @@
 		<ul>
 			<li><a on:click={() => (select = 'home')} href="/#home">Home</a></li>
 			<li><a on:click={() => (select = 'names')} href="/#names">Names</a></li>
+			<li><a on:click={() => (select = 'features')} href="/#features">Features</a></li>
 			<li><a on:click={() => (select = 'about')} href="/#about">About</a></li>
-			<li><a on:click={() => (select = 'contact')} href="/#contact">Contact</a></li>
 			<li><button class="btn-primary" on:click={handleGenerateClick}>Generate</button></li>
 			<li class="selected {select}" />
 		</ul>
 	</nav>
 </header>
+{#if isModalVisible}
+	<Modal on:close={() => (isModalVisible = false)}>
+		<SubjectForm />
+	</Modal>
+{/if}
 
 <style>
 	header {
@@ -31,6 +43,11 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 0 4rem;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
 
 		background-color: #34373e;
 	}
@@ -43,7 +60,7 @@
 
 	li {
 		width: 150px;
-        text-align: center;
+		text-align: center;
 	}
 
 	.selected.home {
@@ -52,10 +69,10 @@
 	.selected.names {
 		left: 20%;
 	}
-	.selected.about {
+	.selected.features {
 		left: 40%;
 	}
-	.selected.contact {
+	.selected.about {
 		left: 60%;
 	}
 

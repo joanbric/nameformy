@@ -3,7 +3,7 @@ export function toTheBottle(node, { duration }) {
         duration,
         css: (t) => {
             return `
-        transform: translate(-50%, ${400 - t * 400}px) scale(${t * 1});
+        transform: translateY(${400 - t * 400}px) scale(${t * 1});
         `;
         }
     };
@@ -15,7 +15,7 @@ export function fromTheBottle(node, { duration, delay }) {
         duration,
         css: (t) => {
             return `
-            transform: translate(-50%, ${400 - t * 400}px) scale(${t * 1});
+            transform: translateY(${400 - t * 400}px) scale(${t * 1});
         `;
         }
     };

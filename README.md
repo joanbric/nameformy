@@ -32,7 +32,7 @@ Contributions are welcome! If you have any ideas or suggestions to enhance NameF
 
 ## License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+This project is licensed under the [Creative Commons Zero v1.0 Universal](LICENSE).
 
 ## Contact
 
